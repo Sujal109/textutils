@@ -1,16 +1,10 @@
 import { useState } from 'react';
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import TextForm from './components/TextForm';
 
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
 
 function App() {
 
@@ -44,33 +38,16 @@ function App() {
   return (
     <>
 
-    <Router>
-
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
 
     <Alert alert={alert} />
 
     <div className="container">
-
-    <Routes>
-          <Route exact path="/About" element= {<About />}>
-            
-          </Route>
     
-          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter your text here" mode={mode} />} >
+      <TextForm showAlert={showAlert} heading="Enter your text here" mode={mode} />
           
-          </Route>
-    </Routes>
-
-
-      
     </div>
 
-
-  {/* <About/>
-     */}
-
-</Router>
     </>
   );
 }
